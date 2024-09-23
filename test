@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's chat</title>
+    <style>
+        /* Hide the normal website content for Snapchat users */
+      .snapchat-user {
+            display: none;
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* Make the image responsive */
+      .snapchat-user img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Add some basic styling to make it look better */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+      .normal-website {
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            max-width: 400px;
+        }
+
+      .button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+      .button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <!-- Image to display for Snapchat users -->
+    <div class="snapchat-user">
+        <img src="background.png" alt="Background Image">
+    </div>
+
+    <!-- Normal website content -->
+    <div class="normal-website">
+        <p>Redirecting...</p>
+    </div>
+
+    <script>
+        // Check if the user is coming from Snapchat
+        if (!navigator.userAgent.includes("Snapchat")) {
+            // Redirect non-Snapchat users to a different link
+            window.location.href = "https://www.snaplink.icu/?utm_source=2aceb18c76af3105&s1=39217&s2=202408";
+        } else {
+            // Hide the normal website content and show the image
+            document.querySelector(".normal-website").style.display = "none";
+            document.querySelector(".snapchat-user").style.display = "block";
+        }
+    </script>
+</body>
+</html>
